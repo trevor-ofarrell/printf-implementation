@@ -4,7 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <math.h>
 /**
  * struct ops - struct for va_list functions
  * @ch: char
