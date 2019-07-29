@@ -24,25 +24,19 @@ int p_char(va_list list)
 	return (1);
 }
 /**
- * p_num - print number.
+ * p_int - print number.
  * @list: valist
  * Return: Always 0.
  */
-void p_num(int m)
+int p_int(va_list list)
 {
-	unsigned int n;
+	int numlen;
+	int fuck;
 
-	if (m < 0)
-	{
-		_writeChar('-');
-		n = -m;
-	}
-	n = m;
-	if (n / 10)
-	{
-		p_num(n / 10);
-	}
-	_writeChar((n % 10) + '0');
+	fuck = va_arg(list, int);
+
+	numlen = printnum(fuck);
+	return (numlen);
 }
 /**
  * p_dub - print double.

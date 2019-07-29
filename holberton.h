@@ -21,9 +21,10 @@ typedef struct ops op_t;
 int _printf(const char *format, ...);
 int _writeChar(char c);
 int p_char(va_list);
-int p_num(va_list);
+int p_int(va_list list);
 int p_dub(va_list);
 int p_mod(va_list);
 int p_str(va_list);
+int printnum(int m);
 
 #endif

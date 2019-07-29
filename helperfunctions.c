@@ -5,21 +5,24 @@ int _writeChar(char c)
 	return (write(1, &c, 1));
 }
 /**
- * print_num - prints an integer.
- * @n:  integer
- * Description: using recurision of a function we can print the number.
+ * p_num - print number.
+ * @list: valist
  * Return: Always 0.
  */
-void print_num(int n)
+int printnum(int m)
 {
-	unsigned int m = n;
+	unsigned int n;
 
-	if (n < 0)
+	if (m < 0)
 	{
-		_putchar('-');
-		m = -m;
+		_writeChar('-');
+		n = -m;
 	}
-	if (m >= 10)
-		print_number(m / 10);
-	_putchar((m % 10) + '0');
+	n = m;
+	if (n / 10)
+	{
+		printnum(n / 10);
+	}
+	_writeChar((n % 10) + '0');
+	return (0);
 }

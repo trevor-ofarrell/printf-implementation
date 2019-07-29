@@ -25,13 +25,15 @@ int _printf(const char *format, ...)
 
 	op_t op[] = {
 		{"c", p_char},
-		{"i", p_num},
+		{"i", p_int},
 		{"%", p_mod},
 		{"f", p_dub},
 		{"s", p_str},
 		{NULL, NULL}
 	};
 
+	if (format == NULL)
+		return (-1);
 	va_start(list, format);
 
 	while (format && format[i])
