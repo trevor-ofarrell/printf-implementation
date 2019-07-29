@@ -28,10 +28,21 @@ int p_char(va_list list)
  * @list: valist
  * Return: Always 0.
  */
-int p_num(va_list list)
+void p_num(int m)
 {
-	_writeChar(va_arg(list, int));
-	return (1);
+	unsigned int n;
+
+	if (m < 0)
+	{
+		_writeChar('-');
+		n = -m;
+	}
+	n = m;
+	if (n / 10)
+	{
+		p_num(n / 10);
+	}
+	_writeChar((n % 10) + '0');
 }
 /**
  * p_dub - print double.
