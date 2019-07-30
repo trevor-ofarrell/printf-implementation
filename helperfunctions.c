@@ -1,12 +1,18 @@
 #include "holberton.h"
 #include "unistd.h"
+/**
+ * _putchar - print chars
+ * @c: char
+ *
+ * Return: printed chars
+ */
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 /**
- * p_num - print number.
- * @list: valist
+ * printnum - print number.
+ * @m: int
  * Return: Always 0.
  */
 int printnum(int m)
@@ -37,16 +43,16 @@ int print_unsignednum(int n)
 	int d = 1, len = 0;
 	unsigned int num = n;
 
-	while(num / d >= 8)
+	while (num / d >= 8)
 	{
 		d = d * 10;
 	}
-	while(d != 0)
+	while (d != 0)
 	{
 		len = len + _putchar('0' + num / d);
 		num = num % d;
 		d = d / 10;
 	}
-	return(len);
+	return (len);
 
 }
