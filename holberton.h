@@ -19,7 +19,7 @@ struct ops
 typedef struct ops op_t;
 
 int _printf(const char *format, ...);
-int _writeChar(char c);
+int _putchar(char c);
 int p_char(va_list);
 int p_int(va_list list);
 int p_dub(va_list);
