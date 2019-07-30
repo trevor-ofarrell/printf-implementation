@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, r, pc = 0;
+	int i = 0, j = 0, r, c = 0;
 	va_list list;
 
 	op_t op[] = {
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 					r = op[j].ptr(list);
 					if (r == -1)
 					return (-1);
-					pc = pc + r;
+					c = c + r;
 					break;
 				}
 			}
@@ -53,15 +53,15 @@ int _printf(const char *format, ...)
 				else
 					return (-1);
 			}
-			i++;
+			i+=2;
 		}
 		else
 		{
 			_putchar(format[i]);
-			pc++;
 			i++;
 		}
+		c++;
 	}
 	va_end(list);
-	return (pc);
+	return (c);
 }
