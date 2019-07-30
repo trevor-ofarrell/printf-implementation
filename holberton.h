@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <math.h>
 /**
  * struct ops - struct for va_list functions
  * @ch: char
@@ -18,6 +17,7 @@ struct ops
 };
 typedef struct ops op_t;
 
+int printNsearch(const char *format, op_t op[], va_list list);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int p_char(va_list);
