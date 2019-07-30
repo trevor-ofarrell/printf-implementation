@@ -4,8 +4,8 @@
  * @format: const char
  * Return: arguments
  */
-int printNsearch(const char *format, op_t op[], va_list list);
 
+int p_uint(va_list);
 int _printf(const char *format, ...)
 {
 	int char_list;
@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 		{"c", p_char},
 		{"d", p_int},
 		{"i", p_int},
+		{"u", p_uint},
 		{"%", p_mod},
 		{"f", p_dub},
 		{"s", p_str},
