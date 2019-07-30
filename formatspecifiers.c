@@ -7,11 +7,11 @@
  * @list: list of arguments
  * Return: character amount.
  */
-int print_mod(va_list list)
+int p_mod(va_list list)
 {
 	(void)list;
 	_writeChar('%');
-        return (1);
+	return (1);
 }
 /**
  * p_char - prints char
@@ -31,11 +31,11 @@ int p_char(va_list list)
 int p_int(va_list list)
 {
 	int numlen;
-	int fuck;
+	int f;
 
-	fuck = va_arg(list, int);
+	f = va_arg(list, int);
 
-	numlen = printnum(fuck);
+	numlen = printnum(f);
 	return (numlen);
 }
 /**

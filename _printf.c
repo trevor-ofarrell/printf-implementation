@@ -1,18 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-/**
- * p_mod - print modules
- * @list: list of arguments
- * Return: character amount.
- */
-int p_mod(va_list list)
-{
-	(void)list;
-	_writeChar('%');
-	return (1);
-}
 /**
  * _printf - printf implemntaion
  * @format: const char
@@ -20,9 +6,8 @@ int p_mod(va_list list)
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, r, pc;
+	int i = 0, j = 0, r, pc = 0;
 	va_list list;
-	va_list arg_list;
 
 	op_t op[] = {
 		{"c", p_char},
@@ -36,16 +21,16 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-
-	while (format && format[i])
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
 		{
-			while (op[j].ch)
+			_writeChar('%');
+			for (j = 0; op[j].ch != NULL; j++)
 			{
 				if (format[i + 1] == op[j].ch[0])
 				{
-					r = op[j].ptr(arg_list);
+					r = op[j].ptr(list);
 					if (r == -1)
 						return (-1);
 					pc = pc + r;
@@ -62,8 +47,6 @@ int _printf(const char *format, ...)
 				}
 				else
 					return (-1);
-				j = 0;
-				j++;
 			}
 			i++;
 		}
@@ -73,8 +56,6 @@ int _printf(const char *format, ...)
 		pc++;
 		}
 	}
-	_writeChar('\n');
 	va_end(list);
-	va_end(arg_list);
 	return (pc);
 }
