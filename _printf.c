@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
-			_writeChar('%');
+			_putchar('%');
 			for (j = 0; op[j].ch != NULL; j++)
 			{
 				if (format[i + 1] == op[j].ch[0])
@@ -41,8 +41,8 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] != '\0')
 				{
-					_writeChar(format[i]);
-					_writeChar(format[i + 1]);
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
 					pc += 2;
 				}
 				else
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-		_writeChar(format[i]);
+		_putchar(format[i]);
 		pc++;
 		}
 	}
