@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 
 	op_t op[] = {
 		{"c", p_char},
+		{"d", p_int},
 		{"i", p_int},
 		{"%", p_mod},
 		{"f", p_dub},
@@ -27,14 +28,17 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
-			j = 0;
-			for (; op[j].ch; j++)
+			i += 2;
+		}
+		else if (format[i] == '%')
+		{
+			for (j = 0; op[j].ch; j++)
 			{
 				if (format[i + 1] == op[j].ch[0])
 				{
 					r = op[j].ptr(list);
 					if (r == -1)
-						return (-1);
+					return (-1);
 					pc = pc + r;
 					break;
 				}
@@ -53,9 +57,9 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-		_putchar(format[i]);
-		pc++;
-		i++;
+			_putchar(format[i]);
+			pc++;
+			i++;
 		}
 	}
 	va_end(list);
