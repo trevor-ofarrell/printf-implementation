@@ -9,7 +9,7 @@ the count of printed characters when function is successfull and -1 when the
 functions fails.
 
 OPTIONS for conversions specifiers:
-+ %c: Prints a single character.
++ %c: Prints a tcharacter.
 + %s: Prints a string of characters.
 + %d: Prints integer.
 + %i: Prints integer.
