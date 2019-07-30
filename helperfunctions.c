@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include "unistd.h"
-int _writeChar(char c)
+int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
@@ -15,7 +15,7 @@ int printnum(int m)
 
 	if (m < 0)
 	{
-		_writeChar('-');
+		_putchar('-');
 		n = -m;
 	}
 	n = m;
@@ -23,6 +23,6 @@ int printnum(int m)
 	{
 		printnum(n / 10);
 	}
-	_writeChar((n % 10) + '0');
+	_putchar((n % 10) + '0');
 	return (0);
 }
