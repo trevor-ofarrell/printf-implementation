@@ -1,14 +1,12 @@
 #include "holberton.h"
-
 /**
- * _printNsearch - printf implemntaion
+ * printNsearch - printf implemntaion
  * @format: const char
  * @op: array list
  * @list: va_list
  * Return: arguments
  */
-
-int printNSearch(const char *format, op_t op[], va_list list)
+int printNsearch(const char *format, op_t op[], va_list list)
 {
 	int i = 0, j = 0, r, c = 0;
 
@@ -41,15 +39,13 @@ int printNSearch(const char *format, op_t op[], va_list list)
 				}
 				else
 					return (-1);
-			}
-			i+=2;
+			} i += 2;
 		}
 		else
 		{
 			_putchar(format[i]);
 			i++;
-		}
-		c++;
+		} c++;
 	}
 	return (c);
 }
