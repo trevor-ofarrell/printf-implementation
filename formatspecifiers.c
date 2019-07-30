@@ -10,7 +10,7 @@
 int p_mod(va_list list)
 {
 	(void)list;
-	_writeChar('%');
+	_putchar('%');
 	return (1);
 }
 /**
@@ -20,7 +20,7 @@ int p_mod(va_list list)
  */
 int p_char(va_list list)
 {
-	_writeChar(va_arg(list, int));
+	_putchar(va_arg(list, int));
 	return (1);
 }
 /**
@@ -45,7 +45,7 @@ int p_int(va_list list)
  */
 int p_dub(va_list list)
 {
-	_writeChar(va_arg(list, double));
+	_putchar(va_arg(list, double));
 	return (1);
 }
 /**
@@ -65,6 +65,6 @@ int p_str(va_list list)
 		return(-1);
 	}
 	for (i = 0; str[i] != '\0'; i++)
-		_writeChar(str[i]);
+		_putchar(str[i]);
 	return (1);
 }

@@ -21,7 +21,8 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-	for (i = 0; format[i] != '\0'; i++)
+	i = 0;
+	while (format && format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
@@ -54,6 +55,7 @@ int _printf(const char *format, ...)
 		{
 		_putchar(format[i]);
 		pc++;
+		i++;
 		}
 	}
 	va_end(list);
