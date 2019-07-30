@@ -68,3 +68,20 @@ int p_str(va_list list)
 		_putchar(str[i]);
 	return (1);
 }
+/**
+ * p_uint - print string.
+ * @list: valist
+ * Return: Always 0.
+ */
+int p_uint(va_list list)
+{
+	unsigned int n;
+
+	n = va_arg(list, unsigned int);
+
+	if (n == 0)
+		return (print_unsignednum(n));
+	if (n < 1)
+		return (-1);
+	return (print_unsignednum(n));
+}

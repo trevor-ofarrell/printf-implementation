@@ -4,12 +4,14 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+
 /**
  * struct ops - struct for va_list functions
  * @ch: char
  * @ptr: function ptr type void
  *
  */
+
 struct ops
 {
 	char *ch;
@@ -25,6 +27,8 @@ int p_int(va_list list);
 int p_dub(va_list);
 int p_mod(va_list);
 int p_str(va_list);
+int p_uint(va_list);
+int print_unsignednum(int n);
 int printnum(int m);
 
 #endif

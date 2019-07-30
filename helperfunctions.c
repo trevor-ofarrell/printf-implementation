@@ -26,3 +26,27 @@ int printnum(int m)
 	_putchar((n % 10) + '0');
 	return (0);
 }
+/**
+ * print_unsignednum - print a unsigned int
+ *
+ * @n: int
+ * Return: 0
+ */
+int print_unsignednum(int n)
+{
+	int d = 1, len = 0;
+	unsigned int num = n;
+
+	while(num / d >= 8)
+	{
+		d = d * 10;
+	}
+	while(d != 0)
+	{
+		len = len + _putchar('0' + num / d);
+		num = num % d;
+		d = d / 10;
+	}
+	return(len);
+
+}
