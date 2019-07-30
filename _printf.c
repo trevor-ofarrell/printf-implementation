@@ -4,8 +4,6 @@
  * @format: const char
  * Return: arguments
  */
-
-int p_uint(va_list);
 int _printf(const char *format, ...)
 {
 	int char_list;
