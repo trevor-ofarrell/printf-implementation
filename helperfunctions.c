@@ -17,14 +17,13 @@ int _putchar(char c)
  */
 int printnum(int m)
 {
-	unsigned int n;
+	unsigned int n = m;
 
 	if (m < 0)
 	{
 		_putchar('-');
 		n = -m;
 	}
-	n = m;
 	if (n / 10)
 	{
 		printnum(n / 10);

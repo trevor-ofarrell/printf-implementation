@@ -25,7 +25,7 @@ int printNsearch(const char *format, op_t op[], va_list list)
 				{
 					r = op[j].ptr(list);
 					if (r == -1)
-					return (-1);
+						return (-1);
 					c = c + r;
 					break;
 				}
@@ -34,8 +34,8 @@ int printNsearch(const char *format, op_t op[], va_list list)
 			{
 				if (format[i + 1] != '\0')
 				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
+					c += _putchar(format[i]);
+					c += _putchar(format[i + 1]);
 				}
 				else
 					return (-1);
