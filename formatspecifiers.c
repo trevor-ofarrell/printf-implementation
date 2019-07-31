@@ -19,13 +19,13 @@ int p_char(va_list list)
  */
 int p_int(va_list list)
 {
-	int numlen;
 	int f;
+	int len = 0;
 
 	f = va_arg(list, int);
 
-	numlen = printnum(f);
-	return (numlen);
+	printnum(&len, f);
+	return (len - 1);
 }
 /**
  * p_dub - print double.
