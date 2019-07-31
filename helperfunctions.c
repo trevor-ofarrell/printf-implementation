@@ -59,11 +59,10 @@ int print_unsignednum(int n)
 	return (len);
 
 }
-#include "holberton.h"
 /**
  * rot13 - convert string to rot13.
  * @list: va_list
- * Return: Always 0.
+ * Return: len.
  */
 int rot13(va_list list)
 {
@@ -85,8 +84,6 @@ int rot13(va_list list)
 				break;
 			}
 		}
-		if (i == 53)
-			_putchar(s[i]);
 	}
 	return (i);
 }
