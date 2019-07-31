@@ -12,12 +12,7 @@ int printNsearch(const char *format, op_t op[], va_list list)
 
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			i += 2;
-		}
-		else if (format[i] == '%')
+		if (format[i] == '%')
 		{
 			for (j = 0; op[j].ch; j++)
 			{
