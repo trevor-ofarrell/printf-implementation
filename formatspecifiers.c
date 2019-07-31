@@ -50,7 +50,7 @@ int p_str(va_list list)
 	str = va_arg(list, char *);
 	if (str == NULL)
 	{
-		str = "(nil)";
+		str = "(null)";
 		return (-1);
 	}
 	for (i = 0; str[i] != '\0'; i++)
