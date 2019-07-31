@@ -56,7 +56,7 @@ int print_unsignednum(int n)
 		num = num % d;
 		d = d / 10;
 	}
-	return (len - 1);
+	return (len);
 
 }
 #include "holberton.h"

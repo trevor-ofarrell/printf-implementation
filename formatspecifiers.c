@@ -25,7 +25,7 @@ int p_int(va_list list)
 	f = va_arg(list, int);
 
 	printnum(&len, f);
-	return (len - 1);
+	return (len);
 }
 /**
  * p_dub - print double.

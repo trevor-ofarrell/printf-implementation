@@ -45,7 +45,8 @@ int printNsearch(const char *format, op_t op[], va_list list)
 		{
 			_putchar(format[i]);
 			i++;
-		} c++;
+			c++;
+		}
 	}
 	return (c);
 }
