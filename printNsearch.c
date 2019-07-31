@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * printNsearch - printf implemntaion
- * @format: const char
- * @op: array list
+ * printNsearch - parses string for format specifiers and prints args
+ * @format: const char pointer
+ * @op: struct containing a function pointer to our format specs
  * @list: va_list
- * Return: arguments
+ * Return: char count
  */
 int printNsearch(const char *format, op_t op[], va_list list)
 {

@@ -1,12 +1,12 @@
 #include "holberton.h"
 /**
- * _printf - printf implemntaion
- * @format: const char
- * Return: arguments
+ * _printf - printf implementation
+ * @format: const char pointer
+ * Return: ret
  */
 int _printf(const char *format, ...)
 {
-	int char_list;
+	int ret;
 	va_list list;
 	op_t op[] = {
 		{"c", p_char},
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-	char_list = printNsearch(format, op, list);
+	ret = printNsearch(format, op, list);
 	va_end(list);
-	return (char_list);
+	return (ret);
 }
