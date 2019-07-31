@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{"%", p_mod},
 		{"f", p_dub},
 		{"s", p_str},
+		{"R", rot13},
 		{NULL, NULL}
 	};
 

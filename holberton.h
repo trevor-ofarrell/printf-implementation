@@ -19,6 +19,7 @@ struct ops
 };
 typedef struct ops op_t;
 
+int rot13(va_list);
 int printNsearch(const char *format, op_t op[], va_list list);
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -29,6 +30,6 @@ int p_mod(va_list);
 int p_str(va_list);
 int p_uint(va_list);
 int print_unsignednum(int n);
-int printnum(int m);
+int printnum(int *ptr, int m);
 
 #endif
