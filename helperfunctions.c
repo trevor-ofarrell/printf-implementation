@@ -17,19 +17,20 @@ int _putchar(char c)
  */
 int printnum(int m)
 {
+	int len = 0;
 	unsigned int n = m;
 
 	if (m < 0)
 	{
-		_putchar('-');
+		len += _putchar('-');
 		n = -m;
 	}
 	if (n / 10)
 	{
 		printnum(n / 10);
 	}
-	_putchar((n % 10) + '0');
-	return (0);
+	len += _putchar((n % 10) + '0');
+	return (len);
 }
 /**
  * print_unsignednum - print a unsigned int
@@ -52,6 +53,6 @@ int print_unsignednum(int n)
 		num = num % d;
 		d = d / 10;
 	}
-	return (len);
+	return (len - 1);
 
 }

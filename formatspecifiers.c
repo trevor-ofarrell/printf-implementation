@@ -3,17 +3,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * print_mod - Prints modulus
- * @list: list of arguments
- * Return: character amount.
- */
-int p_mod(va_list list)
-{
-	(void)list;
-	_putchar('%');
-	return (1);
-}
-/**
  * p_char - prints char
  * @list: va list member
  * Return: Always 0.
@@ -62,7 +51,7 @@ int p_str(va_list list)
 	if (str == NULL)
 	{
 		str = "(nil)";
-		return(-1);
+		return (-1);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
